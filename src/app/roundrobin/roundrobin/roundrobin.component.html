@@ -1,0 +1,18 @@
+<h1>Round Robin</h1>
+
+<form [formGroup]="form">
+  <mat-form-field>
+      <input matInput formControlName="total" placeholder="Total Players" type="number">
+  </mat-form-field>
+  <br>
+  <button (click)="updateTotalPlayersFields()">Update Total Players</button>
+  <div *ngFor="let player of players">
+      <mat-form-field class="player">
+          <input matInput formControlName={{player.name}} placeholder={{player.name}}>
+      </mat-form-field>
+  </div>
+  <br>
+  <button (click)="generateRounds()">Generate Rounds</button>
+</form>
+----
+{{roundsArray}}
