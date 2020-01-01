@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "heroku-postbuild": "ng build --prod"
+    "heroku-postbuild": "ng build --prod",
+    "prettier": "pretty-quick"
   },
   "private": true,
   "dependencies": {
@@ -22,9 +23,11 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
+    "bootstrap": "^4.4.1",
     "core-js": "^2.5.4",
     "express": "^4.17.1",
     "path": "^0.12.7",
+    "prettier": "^1.19.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.9.0",
     "typescript": "~3.5.3",
@@ -40,6 +43,7 @@
     "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
     "enhanced-resolve": "^3.4.1",
+    "husky": "^3.1.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.0.0",
@@ -47,9 +51,11 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "pretty-quick": "^2.0.1",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
-    "tslint": "~5.11.0"
+    "tslint": "~5.11.0",
+    "tslint-config-prettier": "^1.18.0"
   },
   "engines": {
     "node": "v12.14.0",

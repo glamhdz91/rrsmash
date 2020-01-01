@@ -1,18 +1,63 @@
-<h1>Round Robin</h1>
+<div class="container">
+    <h1>Round Robin</h1>
 
-<form [formGroup]="form">
-  <mat-form-field>
-      <input matInput formControlName="total" placeholder="Total Players" type="number">
-  </mat-form-field>
-  <br>
-  <button (click)="updateTotalPlayersFields()">Update Total Players</button>
-  <div *ngFor="let player of players">
-      <mat-form-field class="player">
-          <input matInput formControlName={{player.name}} placeholder={{player.name}}>
-      </mat-form-field>
-  </div>
-  <br>
-  <button (click)="generateRounds()">Generate Rounds</button>
-</form>
-----
-{{roundsArray}}
+    <form [formGroup]="form">
+        <div>
+            <mat-form-field>
+                <input
+                    matInput
+                    formControlName="total"
+                    placeholder="Total Players"
+                    type="number"
+                />
+            </mat-form-field>
+        </div>
+
+        <div>
+            <button mat-raised-button (click)="updateTotalPlayersFields()">
+                Update Total Players
+            </button>
+        </div>
+        <div *ngIf="initiated">
+            <div *ngFor="let player of players">
+                <mat-form-field class="player">
+                    <input
+                        matInput
+                        formControlName="{{ player.name }}"
+                        placeholder="{{ player.name }}"
+                        required
+                    />
+                </mat-form-field>
+            </div>
+        </div>
+        <div>
+            <button mat-raised-button (click)="generateRounds()">
+                Generate Rounds
+            </button>
+        </div>
+    </form>
+    <div *ngIf="this.error.value">{{ this.error.message }}</div>
+    <!-- <div *ngFor="let round of rounds; let i = index">
+        {{i + 1}}:  {{round}}
+    </div> -->
+    <div>
+        <table class="table table-striped" *ngIf="rounds.length > 0">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let round of rounds; index as i">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{ round[0] }}</td>
+                    <td>vs</td>
+                    <td>{{ round[1] }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

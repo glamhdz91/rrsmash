@@ -1,0 +1,12 @@
+.container {
+    padding: 20px;
+    margin: 20px;
+    background-color: #c8c1e4;
+    border-style: solid;
+    border-color: darkgray;
+    min-height: 800px;
+    margin: 0 auto;
+}
+.table {
+    margin: 10px 0px;
+}
