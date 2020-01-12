@@ -51,7 +51,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let round of rounds; index as i">
+                <tr *ngFor="let round of rounds; index as i" [ngClass]="{'table-row': ((i + 1) % (form.value.total - 1)) === 0}">
                     <th scope="row">{{ i + 1 }}</th>
                     <td>{{ round[0] }}</td>
                     <td>vs</td>
